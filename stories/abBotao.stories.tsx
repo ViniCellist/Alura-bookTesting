@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { abBotao } from '../src';
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
@@ -9,6 +7,18 @@ export default {
     component: abBotao
 } as ComponentMeta<typeof abBotao>
 
-const Template: ComponentStory<typeof abBotao> = () => <abBotao />
+const Template: ComponentStory<typeof abBotao> = (args) => <abBotao {...args} />
 
 export const Primario = Template.bind({})
+
+Primario.args = {
+    texto: 'Ab Botão Primário',
+    tipo: 'primario'
+} as abBotaoProps
+
+export const Secundario = Template.bind({})
+
+Secundario.args = {
+    texto: 'Ab Botão Secundário',
+    tipo: 'secundario'
+} as abBotaoProps
